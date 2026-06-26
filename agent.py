@@ -19,5 +19,15 @@ def chat(user_message, history):
     if message.get("tool_calls"):
         tool_name = message["tool_calls"][0]["function"]["name"]
         tool_args = message["tool_calls"][0]["function"]["arguments"]
-        return handle_tool_call(tool_name, tool_args)
+        
+        # append assistant's tool call to history
+        history.append(message)
+        
+        # execute the tool
+        result = handle_tool_call(tool_name, tool_args)
+        
+        # append tool result to history
+        history.append({"role": "tool", "content": str(result)})
+        
+        return result
     return message["content"]
