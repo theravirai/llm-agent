@@ -24,3 +24,12 @@ def get_username():
     if row:
         return row[0]
     return None
+
+#Checking if each functions are working as per expectation.
+# if __name__ == "__main__":
+#     init_db()
+
+#     username = input("Enter your username: ")
+#     save_username(username)
+
+#     print("Stored username:", get_username())
