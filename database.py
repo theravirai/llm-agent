@@ -25,7 +25,7 @@ def get_username():
         return row[0]
     return None
 
-#Checking if each functions are working as per expectation.
+#Checking if all functions are working as per expectation.
 # if __name__ == "__main__":
 #     init_db()
 
