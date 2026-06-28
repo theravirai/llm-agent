@@ -5,7 +5,7 @@ def init_db():
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
     cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT)")
-    conn.commit()
+    conn.commit() # Save everything permanently.
     conn.close()
 
 def save_username(username):
@@ -23,7 +23,7 @@ def get_username():
     conn.close()
     if row:
         return row[0]
-    return None
+    return "You have not stored any usernames yet."
 
 #Checking if all functions are working as per expectation.
 # if __name__ == "__main__":
