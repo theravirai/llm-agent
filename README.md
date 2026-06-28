@@ -41,9 +41,18 @@ llm-agent/
 
 ## Setup
 
-Install dependencies:
+Clone the repository:
 
 ```bash
+git clone https://github.com/theravirai/llm-agent
+cd llm-agent
+```
+
+Create a virtual environment and install dependencies:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -55,42 +64,19 @@ ollama pull qwen2.5:3b
 
 ---
 
-## Running the Application
+## Running
 
-Start the Ollama server:
+Start Ollama in one terminal tab:
 
 ```bash
 ollama serve
 ```
 
-Open another terminal.
-
-### macOS / Linux
-
-Activate the virtual environment:
+Run the agent in another tab:
 
 ```bash
 source venv/bin/activate
-```
-
-Run the application:
-
-```bash
 python3 main.py
-```
-
-### Windows (Command Prompt)
-
-Activate the virtual environment:
-
-```cmd
-venv\Scripts\activate
-```
-
-Run the application:
-
-```cmd
-python main.py
 ```
 
 ---
